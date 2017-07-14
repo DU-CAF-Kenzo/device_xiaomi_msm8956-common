@@ -261,9 +261,10 @@ on post-fs-data
     #Create folder for mm-qcamera-daemon
     mkdir /data/camera 0770 media camera
 
-    #Create PERFD deamon related dirs
-    mkdir /data/system/perfd 0770 root system
-    chmod 2770 /data/system/perfd
+    # Create PERFD deamon related dirs
+    mkdir /data/system/perfd 2770 root system
+    rm /data/system/perfd/default_values
+    start perfd
 
     # Sensor
     mkdir /persist/sensors 0775 system system
@@ -316,6 +317,11 @@ on post-fs-data
     mkdir /persist/data/tz 0700 system system
     mkdir /data/misc/dts 0770 media audio
     mkdir /data/misc/audio_pp 0771 media audio
+
+    # Create PERFD deamon related dirs
+    mkdir /data/system/perfd 2770 root system
+    rm /data/system/perfd/default_values
+    start perfd
 
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
@@ -545,12 +551,6 @@ service qseecomd /system/bin/qseecomd
    class core
    user root
    group root
-   writepid /dev/cpuset/system-background/tasks
-
-service perfd /system/vendor/bin/perfd
-   class main
-   user root
-   disabled
    writepid /dev/cpuset/system-background/tasks
 
 service thermal-engine /system/vendor/bin/thermal-engine
