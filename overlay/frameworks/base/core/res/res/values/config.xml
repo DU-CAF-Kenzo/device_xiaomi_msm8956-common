@@ -474,5 +474,9 @@
        <item>0x1</item>        <!-- SCHEDBOOST resource value-->
        <item>0x40800000</item> <!-- CPUBOOST_MIN_FREQ resource opcode-->
        <item>0x514</item>      <!-- CPUBOOST MIN_FREQ resource value-->
-</integer-array>
+   </integer-array>
+
+    <!-- True if Unprocessed audio source supports the required frequency range and level -->
+    <bool name="config_supportAudioSourceUnprocessed">true</bool>
+
 </resources>
