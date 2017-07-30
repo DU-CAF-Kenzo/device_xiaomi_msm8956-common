@@ -302,9 +302,20 @@ vendor/lib/libconnctrl.so
 
 # Perf
 bin/msm_irqbalance
+framework/QPerformance.jar
 vendor/bin/perfd
+vendor/etc/public.libraries.txt
+vendor/etc/perf-profile0.conf
+vendor/etc/perf-profile1.conf
+vendor/etc/perf-profile2.conf
+vendor/etc/perf-profile3.conf
+vendor/etc/perf-profile4.conf
+vendor/etc/perf-profile5.conf
+vendor/etc/perf-profile6.conf
 vendor/lib64/libqti-perfd-client.so
+vendor/lib64/libqti_performance.so
 vendor/lib/libqti-perfd-client.so
+vendor/lib/libqti_performance.so
 
 # Peripheral manager
 bin/pm-proxy
