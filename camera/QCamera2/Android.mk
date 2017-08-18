@@ -60,6 +60,7 @@ LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/util \
         $(LOCAL_PATH)/HAL3 \
         hardware/qcom/media-caf/msm8952/mm-core/inc \
+        $(LOCAL_PATH)/HAL3
 
 #HAL 1.0 Include paths
 LOCAL_C_INCLUDES += \
