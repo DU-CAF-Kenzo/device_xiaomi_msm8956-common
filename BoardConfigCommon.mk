@@ -121,9 +121,11 @@ BOARD_USES_QCNE := true
 
 # Dex
 ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    ifeq ($(WITH_DEXPREOPT),)
+  ifeq ($(WITH_DEXPREOPT),)
+    ifeq ($(TARGET_BUILD_VARIANT),user)
       WITH_DEXPREOPT := true
+    else
+      WITH_DEXPREOPT := false
     endif
   endif
 endif
